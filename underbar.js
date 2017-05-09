@@ -15,12 +15,15 @@ const last = function(array, n = 1) {
 
 // see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
 const indexOf = function(array, target, fromIndex=0) {
-  for (let index = fromIndex; index <= array.length; index++) {
-    if (array[index] === target) {
-      return index;
+  // This is not the most efficient solution but we use each() here for the learning value.
+  // The code reuse is nice and it avoids off-by-one errors from using for-loops.
+  let result = -1;
+  each(array, function(item, index) {
+    if (index >= fromIndex && result === -1 && item === target) {
+      result = index;
     }
-  }
-  return -1;
+  });
+  return result;
 };
 
 const isArrayLike = function(obj) {
@@ -111,8 +114,8 @@ const filter = function(obj, callback=identity) {
 };
 
 // Return object without the elements / object valuesthat were rejected by the callback.
-const reject = function(arr, callback=identity) {
-  return filter(arr, item => !callback(item));
+const reject = function(obj, callback=identity) {
+  return filter(obj, item => !callback(item));
 };
 
 // De-duplicates (de-dups) the elements / object values.
