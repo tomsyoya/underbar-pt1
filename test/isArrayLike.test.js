@@ -18,4 +18,14 @@ describe('isArrayLike()', () => {
     };
     expect(_.isArrayLike(nonArrayLikeObj)).toBe(false);
   });
+  
+  it('returns true for String data type', () => {
+    const stringObj = 'ABC';
+    expect(_.isArrayLike(stringObj)).toBe(true);
+  });
+  
+  it('returns false for Number data type', () => {
+    const num = 123;
+    expect(_.isArrayLike(num)).toBe(false);
+  });
 });

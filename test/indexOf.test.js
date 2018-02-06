@@ -25,5 +25,16 @@ describe('indexOf()', () => {
     const arr = ['foo', 'bar', 'baz', 'bar', 'bar'];
     expect(_.indexOf(arr, 'bar', 2)).toBe(3);
   });
+  
+  it('searching boolean value and return its index', () => {
+    const arr = ['foo', 1, 'baz', '33', false];
+    expect(_.indexOf(arr, false)).toBe(4);
+  });
+  
+  it('should be return -1 ', () => {
+    const arr = ['foo', 1, 'baz', '33', 'false'];
+    expect(_.indexOf(arr, 33)).toBe(-1);
+  });
+
 
 });
