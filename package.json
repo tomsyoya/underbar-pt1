@@ -1,7 +1,7 @@
 {
-  "name": "underbar",
+  "name": "underbar-clone",
   "version": "1.0.0",
-  "description": "",
+  "description": "This repo is a clone of the open-source project called Underscore.",
   "scripts": {
     "test": "jest"
   },
@@ -10,7 +10,7 @@
     "url": "git+https://github.com/tim-hr/underbar.git"
   },
   "author": "manzoid <manzoid@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/tim-hr/underbar/issues"
   },
@@ -18,5 +18,9 @@
   "devDependencies": {
     "jest": "^19.0.2",
     "jest-cli": "^19.0.2"
+  },
+  "main": ".eslintrc.js",
+  "directories": {
+    "test": "test"
   }
 }
