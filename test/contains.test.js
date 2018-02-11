@@ -31,4 +31,13 @@ describe('contains()', () => {
     expect(_.contains(ponies, 'Applejack')).toBe(false);
   });
 
+  it('returns true if the target value is among the keys of an object', () => {
+    const ponies = {
+      'pony1': 'Fluttershy',
+      'pony2': 'Pinkie Pie',
+      'pony3': 'Rainbow Dash',
+      'pony4': 'Rarity'
+    };
+    expect(_.contains(Object.keys(ponies), 'pony2')).toBe(true);
+  });
 });

@@ -83,8 +83,8 @@ const reduce = function(obj, callback, initialValue) {
 // Return true if the object contains the target.
 const contains = function(obj, target) {
   return reduce(obj, (wasFound, item) => {
-    return wasFound || item === target;
-  }, false);
+    return wasFound || item === target; //左から確認していき、trueであった方を返す
+  }, false); //reduceに渡す際に最初にtrueが入らないようにする
 };
 
 // Return true if all the elements / object values are accepted by the callback.
