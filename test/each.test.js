@@ -39,5 +39,19 @@ describe('each()', () => {
     });
     expect(count).toBe(3);
   });
+  
+  it('iterates every element of an array-like object, passing that element to the callback and make new Array object', ()=>{
+    const arrayLikeObj = {
+      1: 'a',
+      2: 'b',
+      3: 'c'
+    };
+    let charArray = [];
+    _.each(arrayLikeObj, function(element, index, iteratedArrayLikeObj) {
+      expect(element).toEqual(iteratedArrayLikeObj[index]);
+      charArray.push(element);
+    });
+    expect(charArray).toEqual(['a', 'b', 'c']);
+  });
 });
 
