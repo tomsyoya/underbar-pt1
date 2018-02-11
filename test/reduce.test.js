@@ -12,5 +12,11 @@ describe('reduce()', () => {
     const result = _.reduce(nums, (a, b) => a + b);
     expect(result).toEqual(15);
   });
+  
+  it('reduces an array of numbers to a sum, with initial value 10 for the accumulator', () => {
+    const nums = [1, 2, 3, 4, 5];
+    const result = _.reduce(nums, (acc, num) => acc + num, 10);
+    expect(result).toEqual(25);
+  });
 
 });

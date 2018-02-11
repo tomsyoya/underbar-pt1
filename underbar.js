@@ -62,18 +62,22 @@ const pluck = function(obj, key) {
 // is not given, the first element of the collection is used as the initial
 // value. The callback is invoked with four arguments:
 // (accumulator, value, index|key, collection).
+//アキュムレータと配列の各要素に対してcallback関数を実行する
 const reduce = function(obj, callback, initialValue) {
-  let accumulator = initialValue;
+  //第３引数に値が入力されているか確認
+  let accumulator = initialValue; //関数を実行する際の計算をする初期値を設定
   let initializing = accumulator === undefined;
+  //配列内の各要素に対してeach(forEachのようなもの)を実行
   each(obj, (currentValue, currentIndexOrKey, iteratedObj)  => {
     if (initializing) {
       initializing = false;
       accumulator = currentValue;
     } else {
+      //第２引数で指定した関数を実行
       accumulator = callback(accumulator, currentValue, currentIndexOrKey, iteratedObj);
     }
   });
-  return accumulator;
+  return accumulator; //実行結果を返す
 };
 
 // Return true if the object contains the target.
