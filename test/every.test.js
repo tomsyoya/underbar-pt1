@@ -13,4 +13,17 @@ describe('every()', () => {
     });
 
   });
+  
+  describe('processing an Object', () => {
+    it('returns true if all property has are odd', ()=>{
+      const numObject = {
+        'prop1' : 1,
+        'prop2' : 3,
+        'prop3' : 5,
+        'prop4' : 7
+      };
+      expect(_.every(numObject, num => num % 2 === 1)).toBe(true);
+    });
+  });
+  
 });
