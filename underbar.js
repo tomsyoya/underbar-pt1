@@ -88,6 +88,7 @@ const contains = function(obj, target) {
 };
 
 // Return true if all the elements / object values are accepted by the callback.
+//配列またはオブジェクト内の値を全てコールバック関数に渡して検証し、全てtrueだった場合にtrueを返す。一つでもfalseになった場合はfalseが返される
 const every = function(obj, callback) {
   return reduce(obj, (allPassed, item) => {
     return allPassed && !!callback(item);
@@ -95,6 +96,7 @@ const every = function(obj, callback) {
 };
 
 // Return true if even 1 element / object value is accepted by the callback.
+//配列またはオブジェクト内の値を全てコールバック関数で検証し、一つでもtrueだった場合、trueを返す 全てfalseだった場合、falseを返す
 const some = function(obj, callback) {
   return reduce(obj, (anyPassed, item) => {
     return anyPassed || !!callback(item);
