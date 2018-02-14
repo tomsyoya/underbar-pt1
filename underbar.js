@@ -104,6 +104,7 @@ const some = function(obj, callback) {
 };
 
 // Return an array with all elements / object values that are accepted by the callback.
+//条件にあったもののみを配列に格納して返す
 const filter = function(obj, callback) {
   const result = [];
   each(obj, item => {
