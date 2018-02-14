@@ -122,6 +122,7 @@ const reject = function(obj, callback) {
 };
 
 // De-duplicates (de-dups) the elements / object values.
+//重複している値を削除して配列を返す
 const uniq = function(obj) {
   const foundItems = {};
   return filter(obj, item => {
