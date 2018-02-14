@@ -116,6 +116,7 @@ const filter = function(obj, callback) {
 };
 
 // Return object without the elements / object valuesthat were rejected by the callback.
+//コールバック関数の結果がfalseだったものを返す
 const reject = function(obj, callback) {
   return filter(obj, item => !callback(item));
 };

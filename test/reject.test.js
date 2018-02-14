@@ -18,4 +18,9 @@ describe('reject()', () => {
     const orderItems = _.reject(order, (value) => value === null);
     expect(orderItems).toEqual(['burger', 'ketchup', 'cookie']);
   });
+  
+  it('rejects lowercase word from an array', () => {
+    const words = ['APPLE', 'BILLY', 'CHERRY', 'dog', 'echo', 'FOX', 'golf'];
+    expect(_.reject(words, word => word === word.toUpperCase())).toEqual(['dog', 'echo', 'golf']);
+  });
 });
